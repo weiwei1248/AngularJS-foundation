@@ -1,0 +1,23 @@
+<h1>Angular </h1>
+
+<div class="row" ng-controller="ReadingListCtrl as readingListCtrl">
+  <button class="btn btn-default" ng-click="reviewCtrl.showForm=!reviewCtrl.showForm">{{reviewCtrl.showForm ? "Hide Form" : "Create Review"}}</button>
+  <hr />
+  <review-form ng-show="reviewCtrl.showForm"></review-form>
+  <hr />
+
+  <ul class="list-styled col-sm-8">
+    <li class="book row" ng-repeat="book in readingListCtrl.books">
+      <div book-rating></div>
+        <div class="col-sm-9">
+          <h3>{{book.title}}</h3>
+
+          <cite class="text-muted">Written By {{book.author}}</cite>
+
+          <p>{{book.review}}</p>
+          <book-genres></book-genres>
+
+        </div>
+      </li>
+    </ul>
+  </div>
